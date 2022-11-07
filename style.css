@@ -1,0 +1,171 @@
+:root{
+    --dark:rgb(92, 81, 81);
+    --darken:rgb(22, 20, 20);
+    --darkest:black;
+    --gray:rgb(75, 70, 70);
+    --light:white;
+    --pink:rgb(189, 64, 85);
+    --purple:rgb(67, 10, 100);
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace,sans-serif;
+    margin: 0;
+}
+body{
+    background-color: var(--darken);
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+header h1{
+    color: var(--gray);
+    font-weight: 600;
+    
+}
+textarea,input,button{
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+.textArea{
+    flex: 1 1 0%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--darkest);
+    color: var(--gray);
+    padding: 1rem;
+    border-radius: 12px;
+}
+.textArea::placeholder{
+    background-image: linear-gradient(to right, var(--pink),var(--purple));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+#submitTask{
+    cursor: pointer;
+    font-weight: 800;
+    font-size: larger;
+    color: var(--pink);
+    background-image: linear-gradient(to right, var(--pink),var(--purple));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    /* transition: font-size 1s; */
+}
+#submitTask:hover{
+    background-image: linear-gradient(to right, var(--purple),var(--pink));
+    /* font-size: x-large; */
+}
+#submitTask:active{
+    background-image: linear-gradient(to right, rgb(133, 155, 133),green );
+    opacity: 0.5;
+}
+.displayDateTime{
+    border: 2px solid var(--darkest);
+    border-radius: 1rem;
+    padding: 5px;
+    width: fit-content;
+    background-image:linear-gradient(to right, var(--purple),var(--pink));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+main{
+    padding: 2rem 1rem;
+    flex: 1 1 0%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+section h2{
+    color: var(--gray);
+    font-weight: 400;
+    margin-bottom:1rem;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.content .text{
+    
+    width: 100%;
+    display: flex;
+    transition: 0.3s;
+    color: var(--light);
+    font-size: larger;
+}
+.content .text:not(:read-only){
+    color: var(--pink);
+
+}
+
+.action{
+    display: flex;
+    margin-right: 0.55rem;
+    justify-content: center;
+    align-items: center;
+}
+.action button{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: larger;
+    font-weight: bold;
+}
+.action button:hover{
+    opacity: 0.3;
+}
+.action button:active{
+    color: limegreen;
+}
+.action .edit{
+   
+    background-image:linear-gradient(to right, var(--purple),var(--pink));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+.action .delete{
+    color: crimson;
+}
+
+.message{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(165, 197, 197);
+    opacity: 0.7;
+    font-size: larger;
+    color: var(--darkest);
+    justify-content: center; 
+    text-align: center;
+    align-items: center;
+
+    flex-direction: column;
+    
+}
+.message.show{
+    display: flex;
+}
+
+.close{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+}
+
+
+
