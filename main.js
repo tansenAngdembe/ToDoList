@@ -59,13 +59,13 @@ window.addEventListener("load", () => {
         task_el.appendChild(action_el)
 
         edit_el.addEventListener("click", () => {
-            if (edit_el.innerText.toLowerCase = "edit") {
+            if (edit_el.innerText.toLowerCase() == "edit") {
                 task_input_el.removeAttribute("readonly");
                 task_input_el.focus();
                 edit_el.innerText = "Save";
             }
             else{
-                task_input_el.setAttribute("readonly");
+                task_input_el.setAttribute("readonly","readonly");
                 edit_el.innerText="Edit";
             };
         });      
